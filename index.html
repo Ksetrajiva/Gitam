@@ -6,41 +6,74 @@
     <title>VDC Prototype - Kshetrajiva</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to bottom, #e0eafc, #cfdef3);
             margin: 0;
             padding: 0;
+            animation: fadeIn 2s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
         header {
-            background-color: #333;
+            background: linear-gradient(45deg, #3a6186, #89253e);
             color: #fff;
             text-align: center;
             padding: 1rem 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
         header h1 {
             margin: 0;
             font-size: 2.5rem;
+            animation: slideDown 1s;
+        }
+        @keyframes slideDown {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
         }
         section {
             padding: 2rem;
-            background-color: #fff;
+            background: #fff;
             margin: 1rem auto;
             max-width: 1200px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 1s;
+        }
+        @keyframes fadeInUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
         }
         .content h2 {
-            font-size: 1.8rem;
+            font-size: 2rem;
             color: #333;
             margin-bottom: 1rem;
+            border-left: 5px solid #3a6186;
+            padding-left: 0.5rem;
         }
         .content p {
-            font-size: 1.1rem;
-            line-height: 1.6;
+            font-size: 1.2rem;
+            line-height: 1.8;
             color: #555;
         }
         .content ul {
-            list-style-type: square;
+            list-style: none;
+            padding: 0;
             margin: 1rem 0;
+        }
+        .content ul li {
+            font-size: 1.1rem;
+            color: #555;
+            padding: 0.5rem 0;
+            position: relative;
+        }
+        .content ul li:before {
+            content: '\2022';
+            color: #3a6186;
+            font-weight: bold;
+            display: inline-block;
+            width: 1rem;
         }
         .media {
             text-align: center;
@@ -50,15 +83,24 @@
             width: 80%;
             max-width: 800px;
             margin: 1rem 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .media img:hover, .media video:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
         }
         footer {
-            background-color: #333;
+            background: linear-gradient(45deg, #89253e, #3a6186);
             color: #fff;
             text-align: center;
             padding: 1rem 0;
             position: relative;
             bottom: 0;
             width: 100%;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 2s;
         }
     </style>
 </head>
