@@ -10,11 +10,7 @@
             background: linear-gradient(to bottom, #e0eafc, #cfdef3);
             margin: 0;
             padding: 0;
-            animation: fadeIn 2s;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            overflow-x: hidden;
         }
         header {
             background: linear-gradient(45deg, #3a6186, #89253e);
@@ -26,7 +22,7 @@
         header h1 {
             margin: 0;
             font-size: 2.5rem;
-            animation: slideDown 1s;
+            animation: slideDown 1.5s ease-out;
         }
         @keyframes slideDown {
             from { transform: translateY(-50px); opacity: 0; }
@@ -39,7 +35,15 @@
             max-width: 1200px;
             border-radius: 10px;
             box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-            animation: fadeInUp 1s;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeInUp 1s forwards;
+        }
+        section:nth-child(even) {
+            animation-delay: 0.5s;
+        }
+        section:nth-child(odd) {
+            animation-delay: 1s;
         }
         @keyframes fadeInUp {
             from { transform: translateY(50px); opacity: 0; }
@@ -100,14 +104,26 @@
             bottom: 0;
             width: 100%;
             box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
-            animation: fadeIn 2s;
+        }
+        .highlight {
+            background: linear-gradient(90deg, #3a6186, #89253e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
     </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const sections = document.querySelectorAll("section");
+            sections.forEach((section, index) => {
+                section.style.animationDelay = `${index * 0.3}s`;
+            });
+        });
+    </script>
 </head>
 <body>
 
 <header>
-    <h1>VDC Prototype - Kshetrajiva</h1>
+    <h1 class="highlight">VDC Prototype - Kshetrajiva</h1>
 </header>
 
 <section class="content">
