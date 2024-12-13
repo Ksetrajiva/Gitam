@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VDC Prototype - Kshetrajiva</title>
+    <meta name="description" content="Kshetrajiva offers innovative solutions to reduce human-wildlife conflicts through animal detection and deterrence systems using sensors, cameras, and sprays.">
+    <title>Human-Wildlife Conflict Solutions | Kshetrajiva VDC Prototype</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(to bottom, #e0eafc, #cfdef3);
+            background: #90616d;
             margin: 0;
             padding: 0;
-            overflow-x: hidden;
+            color: #333;
         }
         header {
             background: linear-gradient(45deg, #3a6186, #89253e);
@@ -18,115 +19,156 @@
             text-align: center;
             padding: 1rem 0;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+            top: 0;
+            z-index: 1000;
         }
         header h1 {
             margin: 0;
             font-size: 2.5rem;
-            animation: slideDown 1.5s ease-out;
         }
-        @keyframes slideDown {
-            from { transform: translateY(-50px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
+        .navbar {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 0.5rem;
         }
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: color 0.3s, font-size 0.3s;
+        }
+        .navbar a:hover {
+            color: #cfdef3;
+            font-size: 1.5rem;
+        }
+        .hero-section {
+            position:relative;
+           height: 500px;
+            display:flex;
+           justify-content:center;
+           align-items: flex-end;
+            overflow:hidden;
+}
+.hero-section img{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 95%;
+    object-fit:cover;
+    z-index: 0;
+}
+
         section {
             padding: 2rem;
-            background: #fff;
             margin: 1rem auto;
-            max-width: 1200px;
+            max-width: 1500px;
+            background: #fff;
             border-radius: 10px;
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-            opacity: 0;
-            transform: translateY(50px);
-            animation: fadeInUp 1s forwards;
-        }
-        section:nth-child(even) {
-            animation-delay: 0.5s;
-        }
-        section:nth-child(odd) {
-            animation-delay: 1s;
-        }
-        @keyframes fadeInUp {
-            from { transform: translateY(50px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            background-color: antiquewhite;
         }
         .content h2 {
             font-size: 2rem;
-            color: #333;
+            color: #3a6186;
+            border-bottom: 3px solid #89253e;
+            padding-bottom: 0.5rem;
             margin-bottom: 1rem;
-            border-left: 5px solid #3a6186;
-            padding-left: 0.5rem;
         }
         .content p {
             font-size: 1.2rem;
             line-height: 1.8;
-            color: #555;
+            margin-bottom: 1rem;
         }
         .content ul {
-            list-style: none;
-            padding: 0;
-            margin: 1rem 0;
+            list-style: disc inside;
+            padding-left: 1.5rem;
         }
         .content ul li {
             font-size: 1.1rem;
-            color: #555;
-            padding: 0.5rem 0;
-            position: relative;
-        }
-        .content ul li:before {
-            content: '\2022';
-            color: #3a6186;
-            font-weight: bold;
-            display: inline-block;
-            width: 1rem;
+            margin-bottom: 0.5rem;
         }
         .media {
             text-align: center;
-            margin: 2rem 0;
+            margin: 1rem 0;
         }
-        .media img, .media video {
-            width: 80%;
+         .media video {
+            width: 100%;
             max-width: 800px;
             margin: 1rem 0;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
+            border-radius: 0px;
+            box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        #art {
+            color: #89253e;
+            text-decoration: none;
+            transition: color 0.3s;
+
+        }
+        .media img {
+            width: 100%;
+            max-width: 800px;
+            margin: 1rem 0;
+            border-radius: 0px;
+            box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
         }
         .media img:hover, .media video:hover {
             transform: scale(1.05);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
         }
         footer {
-            background: linear-gradient(45deg, #89253e, #3a6186);
+            background: #3a6186;
             color: #fff;
             text-align: center;
             padding: 1rem 0;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+            margin-top: 2rem;
         }
-        .highlight {
-            background: linear-gradient(90deg, #3a6186, #89253e);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        footer p {
+            margin: 0.5rem 0;
+        }
+        footer a {
+            color: #cfdef3;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        footer a:hover {
+            color: #fff;
         }
     </style>
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const sections = document.querySelectorAll("section");
-            sections.forEach((section, index) => {
-                section.style.animationDelay = `${index * 0.3}s`;
-            });
-        });
-    </script>
 </head>
 <body>
 
 <header>
-    <h1 class="highlight">VDC Prototype - Kshetrajiva</h1>
+    
+    <h1>Kshetrajiva</h1>
+    <div class="navbar">
+        <a href="#overview">Overview</a>
+        <a href="#solution">Solution</a>
+        <a href="#technology">Technology</a>
+        <a href="#contact">Contact</a>
+    </div>
 </header>
+<div class="hero-section">
+    <img src="https://www.livelaw.in/h-upload/2023/04/17/468641-elephants.jpg">
+    
+    
+    <!-- <div class="hero-message">
+        <p>You are on amazon.com. You can shop on Amazon India for millions of products with local fast delivery</p>
+    </div> -->
+</div>
 
-<section class="content">
+
+<section id="solution" class="content">
+    <h2>Securing Farmland from Wildlife Raids</h2>
+    <p>
+        Farmers near protected forest areas face significant crop losses due to raiding by wild animals such as elephants, wild boars, and deer. Kshetrajiva’s innovative solutions, including chemical, light, and sound deterrents, provide reliable protection for farmland. When implemented along the periphery of fields, these measures have proven to successfully deter wild animals up to 90% of the time. This ensures 24/7 protection without requiring human intervention, potentially increasing crop yields by up to 60%.</p>
+    </section>
+<section id="overview" class="content">
     <h2>Problem Overview</h2>
     <p>This prototype aims to address the increasing animal interventions in agricultural lands, leading to significant crop losses and human-wildlife conflicts.</p>
     <h3>Impact of Human-Wildlife Conflicts:</h3>
@@ -135,15 +177,18 @@
         <li>Increased encounters between farmers and animals.</li>
         <li>Damage to farm infrastructure.</li>
     </ul>
+    <a href="https://timesofindia.indiatimes.com/city/bengaluru/karnataka-sees-77-human-wildlife-conflicts-daily/articleshow/74201379.cms" id="art">Article 1</a>
+
 </section>
 
 <section class="content media">
     <h2>Visual Representation of the Problem</h2>
-    <img src="Problem.jpg" alt="Image showing crop damage by animals">
+    <video width="420" height="350" autoplay loop>
+        <source src="videoplayback (1).mp4" type="video/mp4">
     <p>Caption: Damage caused by wild animals in agricultural lands.</p>
 </section>
 
-<section class="content">
+<section id="solution" class="content">
     <h2>Solution</h2>
     <p>Kshetrajiva offers an integrated animal detection and deterrence system that combines sensors, water and chemical sprays, and camera technologies to prevent wild animals from entering farmlands.</p>
     <h3>Key Features:</h3>
@@ -163,10 +208,11 @@
     <p>Caption: Video demonstrating the detection and spray system in action.</p>
 </section>
 
-<section class="content">
+<section id="technology" class="content">
     <h2>Technology Overview</h2>
     <h3>Sensor and Control Systems:</h3>
     <p>The system uses Reolink RLC-423 cameras for animal detection, powered by YOLOv3 deep learning algorithms for real-time detection.</p>
+    <img src="https://home-cdn.reolink.us/wp-content/uploads/2016/08/423-nightvision.png.webp?sv=1733801675&v=1733803022572" alt="camera" height="100px" width="100px">
     <h3>Spray Mechanism:</h3>
     <p>A 90% water and 10% chemical mixture is sprayed to repel animals, optimizing water and chemical use. It operates automatically based on signals from the sensor unit.</p>
 </section>
@@ -187,13 +233,12 @@
 
 <section class="content">
     <h2>Roadmap</h2>
-    <img src="Roadmap.jpg" alt="Image of the road map">
-
+    <img src="Roadmap.png" alt="Image of the roadmap highlighting development stages">
     <p>The next steps for Kshetrajiva involve researching chemicals, refining animal detection techniques, and fully integrating the system within three months.</p>
 </section>
 
-<footer>
-    <p>Contact Us: kshetr.jiva24@gmail.com</p>
+<footer id="contact">
+    <p>Contact Us: <a href="mailto:kshetr.jiva24@gmail.com">kshetr.jiva24@gmail.com</a></p>
     <p>&copy; 2024 Kshetrajiva - Solving Human-Wildlife Conflicts</p>
 </footer>
 
