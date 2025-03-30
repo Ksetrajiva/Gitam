@@ -230,6 +230,7 @@ header h1 {
     margin-bottom: 1rem;
 }
 .content p {
+    align-content: center;
     font-size: 1.2rem;
     line-height: 1.8;
     margin-bottom: 1rem;
@@ -301,15 +302,7 @@ header h1 {
     text-align: center;
     font-weight: bold;
 }
-    
-.solution-description {
-    font-size: 1.1em;
-    line-height: 1.6;
-    color: #333;
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: justify;
-}
+
     
 .brand-name {
     color: #00796b;
@@ -345,26 +338,22 @@ header h1 {
 }
     
 .section-description {
-    font-size: 1.1em;
-    color: #555;
-    line-height: 1.6;
-    text-align: justify;
-    max-width: 1200px;
-    margin: 0 auto 30px;
+    text-align: center;
+    margin: 20px auto;
+    line-height: 1.5;
+    max-width: 900px;
 }
-    
-.impact-title {
-    font-size: 1.5em;
-    color: #4CAF50;
-    font-weight: bold;
-    margin-bottom: 15px;
-    text-align: left;
-}
-    
+
 .impact-list {
-    font-size: 1.1em;
-    color: #333;
-    margin-bottom: 20px;
+    max-width: 600px;
+    margin: 20px auto;
+    list-style-position: inside;
+    padding-left: 0;
+}
+
+.impact-title {
+    text-align: center;
+    margin: 30px 0 20px;
 }
     
 .impact-list li {
@@ -372,19 +361,20 @@ header h1 {
 }
     
 .article-link {
-    display: inline-block;
-    font-size: 1.1em;
-    font-weight: bold;
-    margin-top: 20px;
+    display: block;
+    text-align: center;
+    margin: 20px auto;
     padding: 10px 20px;
-    border: 2px solid #0015f7;
-    border-radius: 5px;
-    text-align: left;
-}
-    
-.article-link:hover {
-    background-color: #8fdad0;
+    background-color: #4a90e2;
     color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    width: fit-content;
+    transition: background-color 0.3s ease;
+}
+
+.article-link:hover {
+    background-color: #357abd;
 }
     /* General Section Styling */
     .market-opportunities-content {
@@ -550,4 +540,95 @@ padding: 20px;
     .roadmap-image {
 margin-bottom: 20px;
     }
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+.footer {
+    background: linear-gradient(-45deg, #25287d, #457fca, #2df829);
+    background-size: 400% 400%;
+    animation: flowWater 6s ease infinite;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+}
+
+@keyframes flowWater {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.social-share {
+    margin-bottom: 15px;
+}
+.share-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #fff;
+}
+.share-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.post-share-btn a {
+    display: block;
+    width: 40px;
+    height: 40px;
+}
+.social-icon {
+    width: 100%;
+    height: auto;
+}
+
+/* Contact Information Styling */
+.contact-info {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.highlighted-text {
+    color: #f6ff00; /* Soft yellow for highlight */
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+
+
+/* Style for the copyright section */
+.copyright {
+background-color: black; /* Black background */
+color: white; /* White text color */
+text-align: center; /* Center the text */
+padding: 10px; /* Add some padding for spacing */
+margin: 0; /* Remove any default margin */
+}
+
+.copyright .highlighted-text {
+font-weight: bold; /* Make the highlighted text bold */
+}
+.teamdiv {
+    width: 100%;
+    margin: 2rem 0;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+.teamdiv iframe {
+    width: 100%;
+    height: 500px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
